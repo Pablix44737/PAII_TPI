@@ -2,24 +2,24 @@
 package Clases;
 
 public class Usuario{
-    String idUsuario;
+    private String idUsuario;
     /*Capaz podriamos hacer que idUsuario sea int, para programarlo como 
     autoincremental -> static int idUsuario
     Entonces en el constructor de Usuario: idUsuario++*/
     
-    String nombre;
-    String apellido;
-    long dni;
-    String correo;
-    String telefono;
-    String contraseña;
-    String estado;
-    String rol;
-
-    public Usuario(String nombre, String apellido, long dni, String correo, String telefono, String contraseña, String estado, String rol) {
+    private String nombre;
+    private String apellido;
+    private long DNI;
+    private String correo;
+    private String telefono;
+    private String contraseña;
+    private String estado;
+    private String rol;
+ 
+    public Usuario(String nombre, String apellido, long DNI, String correo, String telefono, String contraseña, String estado, String rol){
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
+        this.DNI = DNI;
         this.correo = correo;
         this.telefono = telefono;
         this.contraseña = contraseña;
@@ -42,7 +42,11 @@ public class Usuario{
     public String getNombreYApellido() {
         return nombre + " " + apellido;
     }
-
     
+    public String getInfoBasica(){
+        return "Usuario: " + getNombreYApellido() + " - DNI: " + DNI + " - Rol: " + rol;
+    }
     
 }
+
+
